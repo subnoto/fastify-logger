@@ -2,9 +2,24 @@
 
 # @subnoto/fastify-logger
 
-[![CI](https://github.com/fastify/one-line-logger/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/fastify/one-line-logger/actions/workflows/ci.yml)
+[![CI](https://github.com/subnoto/fastify-logger/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/subnoto/fastify-logger/actions/workflows/ci.yml)
 [![NPM version](https://img.shields.io/npm/v/@subnoto/fastify-logger.svg?style=flat)](https://www.npmjs.com/package/@subnoto/fastify-logger)
 [![neostandard javascript style](https://img.shields.io/badge/code_style-neostandard-brightgreen?style=flat)](https://github.com/neostandard/neostandard)
+
+---
+
+This is a modified version of @fastify/one-line-logger that includes error message support.
+
+You need to make sure logged errors are already formatted as object as pino will simplify stringy them and you'll end up with an empty object for the default Error class.
+
+You can use this in your code:
+
+```ts
+export const serializeError = (error?: Error) =>
+    error ? JSON.stringify(error, Object.getOwnPropertyNames(error)) : "{}";
+```
+
+---
 
 `@subnoto/fastify-logger` helps you format fastify's log into a nice one-line message:
 

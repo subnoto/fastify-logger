@@ -240,12 +240,12 @@ test('format log correctly with error', async (t) => {
   };
 
   const expectedLogColored = `${TIME} - \x1B[32minfo\x1B[39m - GET /path - \x1B[36mbasic incoming request log\x1B[39m\n` +
-    '\x1B[36mError:\x1B[39m {\n' +
+    '\x1B[36mError:\x1B[39m\n{\n' +
     '  "message": "basic error",\n' +
     '  "name": "CustomError"\n' +
     '}\n';
   const expectedLogUncolored = `${TIME} - info - GET /path - basic incoming request log\n` +
-    'Error: {\n' +
+    'Error:\n{\n' +
     '  "message": "basic error",\n' +
     '  "name": "CustomError"\n' +
     '}\n';

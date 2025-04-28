@@ -161,7 +161,7 @@ test('should log an error message', async (t) => {
     const messagesExpected = [
       `${TIME} - \x1B[32minfo\x1B[39m - GET /a-path-with-error - \x1B[36mincoming request\x1B[39m\n`,
       `${TIME} - \x1B[31merror\x1B[39m - \x1B[36ma user defined error log\x1B[39m\n` +
-      '\x1B[36mError:\x1B[39m {\n' +
+      '\x1B[36mError:\x1B[39m\n{\n' +
       '  "message": "my custom error",\n' +
       '  "name": "CustomError"\n' +
       '}\n\n',
