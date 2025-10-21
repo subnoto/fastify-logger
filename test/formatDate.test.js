@@ -3,7 +3,7 @@
 const formatDate = require('../lib/formatDate');
 const { test } = require('node:test');
 
-const timeFormatRE = /^\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d[+-]\d\d\d\d$/;
+const timeFormatRE = /^\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d$/;
 
 test('should generate valid formatted time', (t) => {
   const iterations = 1e5;

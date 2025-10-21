@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
-const benchmark = require('benchmark')
-const messageFormatFactory = require('../lib/messageFormatFactory')
+const benchmark = require('benchmark');
+const messageFormatFactory = require('../lib/messageFormatFactory');
 
 const colors = {
   60: 'red',
@@ -10,8 +10,8 @@ const colors = {
   30: 'green',
   20: 'blue',
   10: 'cyan'
-}
-const formatMessageColorized = messageFormatFactory(true, colors, true)
+};
+const formatMessageColorized = messageFormatFactory(true, colors, true);
 const log = {
   time: Date.now(),
   level: 30,
@@ -20,9 +20,9 @@ const log = {
     method: 'GET',
     url: 'http://localhost'
   }
-}
+};
 
 new benchmark.Suite()
-  .add('formatMessageColorized', function () { formatMessageColorized(log, 'message') }, { minSamples: 100 })
-  .on('cycle', function onCycle (event) { console.log(String(event.target)) })
-  .run()
+  .add('formatMessageColorized', function () { formatMessageColorized(log, 'message'); }, { minSamples: 100 })
+  .on('cycle', function onCycle (event) { console.log(String(event.target)); })
+  .run();
